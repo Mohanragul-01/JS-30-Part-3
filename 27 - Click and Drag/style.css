@@ -1,0 +1,103 @@
+html {
+  box-sizing: border-box;
+  font-size: 16px;
+  scroll-behavior: smooth;
+}
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+body {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: "Poppins", sans-serif;
+  margin: 0;
+  background: #f5f0ff;
+}
+.items {
+  height: 600px;
+  padding: 50px;
+  width: 90%;
+  max-width: 1200px;
+  border: 2px solid #a020f0;
+  overflow-x: auto;
+  overflow-y: hidden;
+  white-space: nowrap;
+  user-select: none;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  transform: scale(0.98);
+  will-change: transform;
+  position: relative;
+  background: rgba(160, 32, 240, 0.1);
+  font-size: 0;
+  perspective: 500px;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+.items::-webkit-scrollbar {
+  height: 10px;
+}
+.items::-webkit-scrollbar-track {
+  background: #f5f0ff;
+  border-radius: 5px;
+}
+.items::-webkit-scrollbar-thumb {
+  background: #a020f0;
+  border-radius: 5px;
+}
+.items::-webkit-scrollbar-thumb:hover {
+  background: #7a18b8;
+}
+.items.active {
+  background: rgba(160, 32, 240, 0.3);
+  cursor: grabbing;
+  cursor: -webkit-grabbing;
+  transform: scale(1);
+}
+.item {
+  width: 180px;
+  height: calc(100% - 40px);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 60px;
+  font-weight: 300;
+  color: white;
+  box-shadow: inset 0 0 0 8px rgba(255, 255, 255, 0.2);
+  transition: all 0.3s ease;
+  margin-right: 10px;
+}
+.item:hover {
+  transform: scale(1.1) rotateY(0deg);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+}
+.item:nth-child(3n + 1) {
+  background: #a020f0;
+}
+.item:nth-child(3n + 2) {
+  background: #c78ff5;
+}
+.item:nth-child(3n + 3) {
+  background: #7a18b8;
+}
+.item:nth-child(even) {
+  transform: scaleX(1.31) rotateY(40deg);
+}
+.item:nth-child(odd) {
+  transform: scaleX(1.31) rotateY(-40deg);
+}
+@media (max-width: 768px) {
+  .items {
+    height: 400px;
+    padding: 30px;
+    width: 95%;
+  }
+  .item {
+    width: 120px;
+    font-size: 40px;
+  }
+}

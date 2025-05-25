@@ -1,0 +1,161 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #a020f0, #7b16b8),
+    url(https://source.unsplash.com/7bwQXzbF6KE/1500x1500);
+  background-blend-mode: overlay;
+  background-size: cover;
+  background-attachment: fixed;
+  font-family: "Inter", sans-serif;
+  color: #ffffff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 2rem;
+}
+
+h1 {
+  font-family: "Amatic SC", cursive;
+  font-size: 3rem;
+  color: #ffffff;
+  margin-bottom: 1rem;
+  animation: fadeIn 1s ease-in;
+}
+
+.compass-container {
+  max-width: 600px;
+  width: 100%;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(8px);
+  border-radius: 12px;
+  border: 1px solid #a020f0;
+  padding: 1.5rem;
+  animation: fadeIn 1s ease-in;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.hint {
+  font-size: 1rem;
+  opacity: 0.7;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+.controls {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-bottom: 1rem;
+  justify-content: center;
+}
+
+button {
+  padding: 0.5rem;
+  border: 2px solid #a020f0;
+  border-radius: 6px;
+  background: #a020f0;
+  color: #ffffff;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: transform 0.2s ease, background 0.3s ease;
+}
+
+button:hover {
+  transform: scale(1.05);
+  background: #7b16b8;
+}
+
+button:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(160, 32, 240, 0.5);
+}
+
+.arrow {
+  width: 250px;
+  overflow: hidden;
+  transition: transform 0.2s ease;
+  display: inline-block;
+}
+
+.arrow path:first-child {
+  fill: #fdfbff;
+}
+
+.arrow path:not(:first-child) {
+  fill: #ffffff;
+}
+
+.speed {
+  color: #ffffff;
+  font-weight: 100;
+  font-size: 2rem;
+  display: flex;
+  align-items: center;
+  margin: 1rem 0;
+}
+
+.units {
+  font-size: 0.8rem;
+  margin-left: 0.5rem;
+}
+
+.accuracy {
+  font-size: 1rem;
+  color: #a020f0;
+  background: rgba(255, 255, 255, 0.2);
+  padding: 0.5rem;
+  border-radius: 6px;
+  text-align: center;
+}
+
+.fallback {
+  font-size: 1rem;
+  color: #ffffff;
+  opacity: 0.7;
+  text-align: center;
+  display: none;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 600px) {
+  h1 {
+    font-size: 2rem;
+  }
+  .compass-container {
+    padding: 1rem;
+  }
+  .arrow {
+    width: 200px;
+  }
+  .speed {
+    font-size: 1.5rem;
+  }
+  .units {
+    font-size: 0.7rem;
+  }
+  button {
+    font-size: 0.9rem;
+    padding: 0.4rem;
+  }
+  .accuracy,
+  .fallback {
+    font-size: 0.9rem;
+  }
+}

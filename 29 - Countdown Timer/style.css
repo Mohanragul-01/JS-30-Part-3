@@ -1,0 +1,118 @@
+html {
+  box-sizing: border-box;
+  font-size: 10px;
+  scroll-behavior: smooth;
+}
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+body {
+  margin: 0;
+  text-align: center;
+  font-family: "Inconsolata", monospace;
+  background: #f5f0ff;
+}
+.timer {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+  background: rgba(160, 32, 240, 0.1);
+}
+.display__time-left {
+  font-weight: 100;
+  font-size: 20rem;
+  margin: 0;
+  color: #a020f0;
+  text-shadow: 4px 4px 0 rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
+.display__time-left.active {
+  transform: scale(1.05);
+}
+.timer__controls {
+  display: flex;
+  background: #a020f0;
+  padding: 1rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+.timer__controls > * {
+  flex: 1;
+}
+.timer__controls form {
+  flex: 1;
+  display: flex;
+}
+.timer__controls input {
+  flex: 1;
+  border: 0;
+  padding: 2rem;
+  font-family: "Inconsolata", monospace;
+  font-size: 1.6rem;
+  background: white;
+  color: #333;
+  border-radius: 5px;
+}
+.timer__controls input::placeholder {
+  color: #a020f0;
+  opacity: 0.7;
+}
+.timer__button {
+  background: none;
+  border: 0;
+  cursor: pointer;
+  color: white;
+  font-size: 2rem;
+  text-transform: uppercase;
+  background: rgba(255, 255, 255, 0.1);
+  border-bottom: 3px solid rgba(255, 255, 255, 0.2);
+  border-right: 1px solid rgba(255, 255, 255, 0.2);
+  padding: 1rem;
+  font-family: "Inconsolata", monospace;
+  transition: all 0.3s ease;
+}
+.timer__button:hover,
+.timer__button:focus {
+  background: rgba(255, 255, 255, 0.2);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  outline: 0;
+}
+.display {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.display__end-time {
+  font-size: 4rem;
+  color: #a020f0;
+  background: white;
+  padding: 1rem 2rem;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+@media (max-width: 768px) {
+  .display__time-left {
+    font-size: 12rem;
+  }
+  .display__end-time {
+    font-size: 2.5rem;
+    padding: 0.8rem 1.5rem;
+  }
+  .timer__controls {
+    flex-wrap: wrap;
+    gap: 10px;
+    padding: 1rem;
+  }
+  .timer__button {
+    font-size: 1.6rem;
+    padding: 0.8rem;
+  }
+  .timer__controls input {
+    padding: 1.5rem;
+    font-size: 1.4rem;
+  }
+}
